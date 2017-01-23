@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Arima+Madurai|Droid+Sans|Grand+Hotel|Roboto|Bungee+Shade|Slabo+27px');
+
+/* Base CSS for all html */
+
+body {
+	background: #D6D4D8;
+}
+.navbar {
+	border-radius: 0px;
+	border: none;
+}
+
+.navbar-toggle:hover {
+	background: transparent !important;
+}
+.navbar-toggle {
+	border:none;
+	outline: none;
+}
+.navbar-collapse {
+	border: 0px !important;
+	outline: none !important;
+	box-shadow: none !important;
+	-webkit-box-shadow: none !important;
+}
+.navbar-static-top {
+	padding-bottom: 20px;
+	padding-top: 20px;
+	background: #1abc9c;
+	transition: all 3s linear;
+	-webkit-animation: navbgchange 30s linear 0 infinite;
+	-moz-animation: navbgchange 30s linear 0 infinite;
+	-ms-animation: navbgchange 30s linear 0 infinite;
+	-o-animation: navbgchange 30s linear 0 infinite;
+	animation: navbgchange 30s linear 0 infinite;
+}
+#fontGrandHotel {
+	font-family: "Grand Hotel", cursive;
+	font-size: 2em;
+	color: white;
+}
+.whitenav {
+	text-decoration: none;
+	font-size: 1.2em;
+	margin: auto 10px;
+	font-family: "Montserrat", sans-serif;
+	color: white !important;
+}
+.whitenav:hover {
+	color: black !important;
+}
+.active > a {
+	background: transparent !important;
+	opacity: 0.7;
+}
+/*
+Animations
+*/
+@-webkit-keyframes navbgchange {
+    0%   {background: #4CAF50;}
+    20%  {background: #03A9F4;}
+    40%  {background: #9C27B0;}
+    60% {background: #FF9800;}
+    80% {background: #F44336;}
+    100% {background: #4CAF50;}
+}
+@-moz-keyframes navbgchange {
+    0%   {background: #4CAF50;}
+    20%  {background: #03A9F4;}
+    40%  {background: #9C27B0;}
+    60% {background: #FF9800;}
+    80% {background: #F44336;}
+    100% {background: #4CAF50;}
+}
+@-o-keyframes navbgchange {
+    0%   {background: #4CAF50;}
+    20%  {background: #03A9F4;}
+    40%  {background: #9C27B0;}
+    60% {background: #FF9800;}
+    80% {background: #F44336;}
+    100% {background: #4CAF50;}
+}
+
+@keyframes navbgchange {
+    0%   {background: #4CAF50;}
+    20%  {background: #03A9F4;}
+    40%  {background: #9C27B0;}
+    60% {background: #FF9800;}
+    80% {background: #F44336;}
+    100% {background: #4CAF50;}
+}
+/*
+Changing the padding and font size of the navigation bar based on screen size
+*/
+@media only screen and (min-width: 768px) {
+	.navbar-static-top {
+		padding-bottom: 30px;
+		padding-top: 30px;
+	}
+	#fontGrandHotel {
+		font-size: 2.3em;
+	}
+	.whitenav {
+		font-size: 1.4em;
+	}
+}
+@media only screen and (min-width: 992px) {
+	.navbar-static-top {
+		padding-bottom: 40px;
+		padding-top: 40px;
+	}
+	#fontGrandHotel {
+		font-size: 2.6em;
+	}
+	.whitenav {
+		font-size: 1.6em;
+	}
+
+}@media only screen and (min-width: 1200px) {
+	.navbar-static-top {
+		padding-bottom: 50px;
+		padding-top: 50px;
+	}
+	#fontGrandHotel {
+		font-size: 3em;
+	}
+	.whitenav {
+		font-size: 1.8em;
+	}
+}
+/* 
+Contentt Area 
+*/
+footer {
+	position: relative;
+	bottom: 0px;
+	width: 100%;
+}
+.foonav {
+	margin: 0px !important;
+	margin-top: 10px;
+	background: #2f2f2f;
+	font-size: 15px;
+}
+#heart {
+	color: red;
+}
+.social-links {
+            text-decoration: none;
+            font-size: 22px;
+            color: white;
+        }
+.social-links:focus {
+		outline: none !important;
+		outline-offset: 0px !important;
+}
+ .social-links:nth-child(1):hover {
+            color: #3b5998;
+}
+.social-links:nth-child(2):hover {
+            color: #cb2027;
+}
+.social-links:nth-child(3):hover {
+            color: #55acee;
+}
+.social-links:nth-child(4):hover {
+            color: #aad450;
+}
+        
+ .social-icons {
+	margin: 0px 5px;
+}
+.navbar-brand {
+	padding: auto 0px !important;
+}
+.footer .navbar .container-fluid {
+	padding-left: 0px !important;
+	margin-left: 0px !important;
+	padding-right: 5px !important;
+	margin-right: 0px !important;
+}
+.footer .navbar .container-fluid .navbar-text {
+	font-size: 14px;
+}
+@media only screen and (min-width: 767px) {
+	.footer .navbar .container-fluid {
+	padding-left: 5px !important;
+	margin-left: 5px !important;
+	padding-right: 5px !important;
+	margin-right: 5px !important;
+}
+	.footer .navbar .container-fluid .navbar-text {
+		font-size: 18px;
+	}
+}

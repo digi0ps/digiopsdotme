@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block body %}
+<link rel="stylesheet" type="text/css" href="{% static 'about/timeline.css' %}">
+<div class="featurette" id="about">
+            <div class="container">
+                <div class="row">
+                    <div class="timeline-centered">
+                        <article class="timeline-entry">
+                            <div class="timeline-entry-inner">
+                                <div class="timeline-icon bg-success">
+                                    <span class="glyphicon glyphicon-home"></span>
+                                </div>
+                                <div class="timeline-label">
+                                    <h2><strong>Childhood</strong></h2>
+                                    <p>I was born on 11th of July 1998 and bought up in different parts of <a href="https://en.wikipedia.org/wiki/Chennai" target="_blank" class="timeline-links"><span class="timeline-link-text">Chennai</span></a> from my kindergarden till my college.</p>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="timeline-entry lefty">
+                            <div class="timeline-entry-inner">
+                                <div class="timeline-icon bg-secondary">
+                                    <span class="glyphicon glyphicon-book"> </span>
+                                </div>
+                                <div class="timeline-label">
+                                    <h2><strong>Education</strong></h2>
+                                    <p>I did my primary and middle school in <a href="https://en.wikipedia.org/wiki/Pon_Vidyashram" target="_blank" class="timeline-links"><span class="timeline-link-text">Pon Vidyashram</span></a> and my high school in <a href="https://en.wikipedia.org/wiki/Chennai_Public_School" target="_blank" class="timeline-links"><span class="timeline-link-text">Chennai Public School</span></a>, after which I joined Computer Science Engineering at <a href="https://en.wikipedia.org/wiki/VIT_University" target="_blank" class="timeline-links"><span class="timeline-link-text">VIT</span></a>.</p>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="timeline-entry">
+                            <div class="timeline-entry-inner">
+                                <div class="timeline-icon bg-info">
+                                    <span class="glyphicon glyphicon-tags"></span>
+                                </div>
+                                <div class="timeline-label">
+                                    <h2><strong>Interests</strong></h2>
+                                    <p>I love coding. Its been my passion since 9th grade. Also I love to keep learning new stuff everyday. Other than that, I like photography. And music. <span class="comment">//Who doesn't listen to music nowadays? lol</span></p>
+                                </div>
+                        </article>
+                        <article class="timeline-entry lefty">
+                            <div class="timeline-entry-inner">
+                                <div class="timeline-icon bg-warning">
+                                    <span class="glyphicon glyphicon-asterisk"></span>
+                                </div>
+                                <div class="timeline-label">
+                                    <h2><strong>Skills</strong></h2>
+		                                    <div class="label-divs"><span class="label label-success skills">Python</span></div>
+		                                    <div class="label-divs"><span class="label label-success skills">C/C++</span></div>
+		                                    <div class="label-divs"><span class="label label-success skills">HTML</span></div>
+		                                    <div class="label-divs"><span class="label label-success skills">CSS</span></div>
+		                                    <div class="label-divs"><span class="label label-success skills">Javascript</span></div>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="timeline-entry begin">
+                            <div class="timeline-entry-inner">
+                                <div class="timeline-icon" style="-webkit-transform: rotate(-90deg); -moz-transform: rotate(-90deg);">
+                                    <i class="entypo-flight"></i>
+                                </div>
+                            </div>
+                        </article>
+                        </div>
+                    </div>
+                </div>
+            </div>
+{% endblock body %}
+{% block script %}
+		<script type="text/javascript">
+		$(function(){
+			var w = $(window).width();
+			if(w>500){
+			$(".lefty").addClass("left-aligned");
+			}
+			else {
+			$(".lefty").removeClass("left-aligned");
+			}
+		})
+
+
+		$(window).resize(function(){
+			var w = $(window).width();
+			if(w>500){
+			$(".lefty").addClass("left-aligned");
+			}
+			else {
+			$(".lefty").removeClass("left-aligned");
+			}
+		});
+	</script>
+{% endblock script %}

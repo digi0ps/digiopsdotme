@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% load staticfiles %}
+
+{% block body %}
+	<div class="container content">
+		<div class="row">
+			<div class="col-md-6 col-md-offset-3 col col-sm-8 col-sm-offset-2 col-xs-12 text-center contentbox">
+				<img src="{% static 'home/avatar.jpg' %}" alt="Avatar" class="avatar" width="160px" height="160px">
+				<h1 class="text-center">Hey, I am Sriram!</h1>
+				<br>
+				<p class="intro">Hello world. I am Sriram.</p>
+				<p class="intro">This website will act as a platform for my blog,</p>
+				<p class="intro">and also as an host for my photographs and projects. </p>
+			</div>
+		</div>
+	</div>
+	<br><br>
+{% endblock body %}
