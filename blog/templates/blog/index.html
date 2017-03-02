@@ -3,5 +3,31 @@
 	Blog
 {% endblock title %}
 {% block body %}
-	
+<style>
+	.article h3{
+		margin-bottom: 0px;
+	}
+	.article div{
+		margin-top: 0px;
+	}
+	.article a{
+		text-decoration: none;
+		color: black;
+	}
+
+
+</style>
+<div class="container">
+	<div class="row">
+	{% for article in articles %}
+		<div class="article col-xs-12 col-sm-8 col-sm-offset-2 jumbotron" id="art{{ article.id }}">
+			<a href="{% url 'article' article.id %}">
+ 			<h3 class="title">{{ article.title }}</h3>
+ 			<small>Posted {{article.posted_time|timesince}} ago Views: {{ article.views }}</small>
+ 			<div class="lead content">{{ article.content|truncatechars:300 }}</div>
+ 			</a>
+		</div> 
+	{% endfor %}
+	</div>
+</div>
 {% endblock body %}

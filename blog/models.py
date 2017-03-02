@@ -11,6 +11,9 @@ class article(models.Model):
 	class meta:
 		ordering = ['-posted_date']
 
+	def __str__(self):
+		return self.title
+
 	def get_date(self):
 		t = timezone.localtime(self.posted_time)
-		return t
+		return "{}-{}-{} {}:{}".format(t.day, t.month, t.year, t.hour, t.minute)
