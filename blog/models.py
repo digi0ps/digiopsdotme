@@ -8,5 +8,9 @@ class article(models.Model):
 	views = models.IntegerField(default=1)
 	posted_time = models.DateTimeField(default=timezone.now)
 
+	class meta:
+		ordering = ['-posted_date']
+
 	def get_date(self):
-		return ""
+		t = timezone.localtime(self.posted_time)
+		return t
