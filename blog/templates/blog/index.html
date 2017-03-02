@@ -4,30 +4,62 @@
 {% endblock title %}
 {% block body %}
 <style>
+	.article {
+		background: #f7faff;
+		padding: 5px;
+		margin-top: 10px;
+		margin-bottom: 10px;
+		border-radius: 5px;
+		box-shadow:5px 5px 10px #aaa;
+	}
 	.article h3{
+		color: #4CAF50;
+		font-family: 'Monsterrat', sans-serif;
 		margin-bottom: 0px;
 	}
 	.article div{
+		color: #37474F;
 		margin-top: 0px;
+	}
+	.article small {
+		color: #9E9E9E;
+		font-size: 15px;
 	}
 	.article a{
 		text-decoration: none;
 		color: black;
 	}
 
-
 </style>
 <div class="container">
 	<div class="row">
 	{% for article in articles %}
-		<div class="article col-xs-12 col-sm-8 col-sm-offset-2 jumbotron" id="art{{ article.id }}">
+		<div class="article col-xs-12 col-sm-8 col-sm-offset-2" id="art{{ article.id }}">
 			<a href="{% url 'article' article.id %}">
- 			<h3 class="title">{{ article.title }}</h3>
- 			<small>Posted {{article.posted_time|timesince}} ago Views: {{ article.views }}</small>
- 			<div class="lead content">{{ article.content|truncatechars:300 }}</div>
+			<div class="container-fluid">
+			<div class="row">
+
+				<div class="col-xs-12 text-center">
+	 			<h3 class="title">{{ article.title }}</h3>
+	 			</div>
+
+	 			<div class="col-xs-8 text-left">
+	 			<small>Posted {{article.posted_time|timesince}} ago</small>
+				</div>
+				<div class="col-xs-4 text-right">
+	 			<small>Views: {{ article.views }}</small>
+	 			</div>
+
+	 			<div class="lead content col-xs-12">
+	 			{{ article.content|truncatechars:300 }}
+	 			</div>
+	 		</div>
+	 		</div>
  			</a>
 		</div> 
 	{% endfor %}
 	</div>
 </div>
 {% endblock body %}
+
+

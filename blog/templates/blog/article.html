@@ -4,22 +4,53 @@
 {% endblock title %}
 {% block body %}
 	<style>
+	.article {
+		background: #f7faff;
+		padding: 5px;
+		margin-top: 10px;
+		margin-bottom: 10px;
+		border-radius: 5px;
+		box-shadow:5px 5px 10px #aaa;
+	}
 	.article h3{
-		margin-bottom: 5px;
+		color: #4CAF50;
+		font-family: 'Monsterrat', sans-serif;
+		margin-bottom: 0px;
 	}
 	.article div{
-		margin-top: 5px;
+		color: #37474F;
+		margin-top: 0px;
+	}
+	.article small {
+		color: #9E9E9E;
+		font-size: 15px;
+	}
+	.article a{
+		text-decoration: none;
+		color: black;
 	}
 	</style>
 	<div class="container">
 		<div class="row">
-			<div class="article jumbotron col-xs-12 col-sm-10 col-sm-offset-1">
-				<h2 class="title">{{ article.title }}</h2>
-				<small>Posted on {{article.get_date}} Views: {{ article.views }}</small>
-				<div class="content">
-				{{ article.content }}
+			<div class="col-xs-12 col-sm-10 col-sm-offset-1 container-fluid">
+			<div class="row article">
+
+				<div class="col-xs-12 text-center">
+	 			<h3 class="title">{{ article.title }}</h3>
+	 			</div>
+
+	 			<div class="col-xs-8 text-left">
+	 			<small>Posted {{article.posted_time|timesince}} ago</small>
 				</div>
+				<div class="col-xs-4 text-right">
+	 			<small>Views: {{ article.views }}</small>
+	 			</div>
+
+	 			<div class="lead content col-xs-12">
+	 			{{ article.content }}
+	 			</div>
+	 		</div>
+	 		</div>
 			</div>
 		</div>
-	</div>
 {% endblock body %}
