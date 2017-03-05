@@ -74,6 +74,10 @@
 			$("#heart").fadeOut(1000).fadeIn(1000);
 		}, 2000);
 		});
+		// Setting the color of the header and the chrome nav bar
+		var color = "{% block navcolor %}red{% endblock navcolor %}"
+		$("meta")[7].attributes["content"].value=color;
+		$(".navbar-static-top")[0].style.backgroundColor=color;
 	</script>
 {% block script %}
 {% endblock script %}

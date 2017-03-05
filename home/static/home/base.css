@@ -28,11 +28,13 @@ body {
 	padding-top: 20px;
 	background: #1abc9c;
 	transition: all 3s linear;
+	/*
 	-webkit-animation: navbgchange 30s linear 0 infinite;
 	-moz-animation: navbgchange 30s linear 0 infinite;
 	-ms-animation: navbgchange 30s linear 0 infinite;
 	-o-animation: navbgchange 30s linear 0 infinite;
 	animation: navbgchange 30s linear 0 infinite;
+	*/
 }
 #fontGrandHotel {
 	font-family: "Grand Hotel", cursive;
@@ -55,7 +57,6 @@ body {
 }
 /*
 Animations
-*/
 @-webkit-keyframes navbgchange {
     0%   {background: #4CAF50;}
     20%  {background: #03A9F4;}
@@ -89,7 +90,7 @@ Animations
     80% {background: #F44336;}
     100% {background: #4CAF50;}
 }
-/*
+
 Changing the padding and font size of the navigation bar based on screen size
 */
 @media only screen and (min-width: 768px) {
