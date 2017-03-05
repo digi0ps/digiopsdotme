@@ -3,7 +3,7 @@
 /* Base CSS for all html */
 
 body {
-	background: #D6D4D8;
+	background: #eee;
 }
 .navbar {
 	border-radius: 0px;
@@ -131,11 +131,6 @@ Changing the padding and font size of the navigation bar based on screen size
 /* 
 Contentt Area 
 */
-footer {
-	position: relative;
-	bottom: 0px;
-	width: 100%;
-}
 .foonav {
 	margin: 0px !important;
 	margin-top: 10px;
