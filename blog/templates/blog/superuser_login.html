@@ -4,5 +4,26 @@
 {% endblock title %}
 {% block navcolor %}#2f2f2f{% endblock navcolor %}
 {% block body %}
-	Login
+	<div class="container login">
+		<div class="row">
+			<div class="login-box col-xs-12 col-sm-4 col-sm-offset-4">
+			<form method="POST" action="{% url 'blog_su' %}">
+			{% csrf_token %}
+			<div class="form-group text-center">
+			  <label for="usr">Username</label>
+			  <input type="text" class="form-control" id="usr">
+			</div>
+			<br>
+			<div class="form-group text-center">
+			  <label for="pwd">Password</label>
+			  <input type="password" class="form-control" id="pwd">
+			</div>
+			<br>
+			<div class="submit text-center">
+			<button type="submit" class="btn btn-medium btn-info">Login</button>
+			</div>
+			</form>
+			</div>
+		</div>
+	</div>
 {% endblock body %}

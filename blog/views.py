@@ -18,4 +18,9 @@ def super_user_view(request):
 	if request.user.is_authenticated:
 		return render(request, "blog/superuser.html")
 	else:
-		return render(request, "blog/superuser_login.html")
+		if request.POST and request.method == "POST":
+			# Write code to verify superuser login
+			# After verifying return the superuser page
+			pass
+		else:
+			return render(request, "blog/superuser_login.html")
