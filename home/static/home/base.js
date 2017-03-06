@@ -9,10 +9,3 @@ if (navigator.userAgent.match(/Android/i)){
 		$(".navbar-static-top")[0].style.backgroundColor = hexy();
 	}, 3000);
 }
-
-//Heart pulsating effect 
-$(function(){
-setInterval(function(){
-	$("#heart").fadeOut(1000).fadeIn(1000);
-}, 2000);
-});
