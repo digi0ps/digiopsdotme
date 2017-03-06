@@ -2,16 +2,22 @@
 {% block title %}
 	Blog
 {% endblock title %}
+{% block blogactive %}active{% endblock blogactive %}
 {% block navcolor %}#4CAF50{% endblock navcolor %}
 {% block body %}
 <style>
 	.article {
 		background: #f7faff;
 		padding: 5px;
-		margin-top: 10px;
-		margin-bottom: 10px;
+		margin-bottom: 30px;
 		border-radius: 5px;
 		box-shadow:5px 5px 10px #aaa;
+	}
+	.article:nth-child(1) {
+		margin-top: 10px;
+	}
+	.article:nth-last-child(1) {
+		margin-bottom: 100px;
 	}
 	.article h3{
 		color: #4CAF50;
@@ -22,20 +28,23 @@
 		color: #37474F;
 		margin-top: 0px;
 	}
-	.article small {
-		color: #9E9E9E;
-		font-size: 15px;
-	}
 	.article a{
 		text-decoration: none;
 		color: black;
 	}
-
+	@media (min-width: 100px) and (max-width: 400px){
+		.content {
+			font-size: 15px;
+		}
+		.smalls {
+			font-size: 5px;
+		}
+	}
 </style>
 <div class="container">
 	<div class="row">
 	{% for article in articles %}
-		<div class="article col-xs-12 col-sm-8 col-sm-offset-2" id="art{{ article.id }}">
+		<div class="article col-xs-12 col-sm-10 col-sm-offset-1" id="art{{ article.id }}">
 			<a href="{% url 'article' article.id %}">
 			<div class="container-fluid">
 			<div class="row">
@@ -45,10 +54,10 @@
 	 			</div>
 
 	 			<div class="col-xs-8 text-left">
-	 			<small>Posted {{article.posted_time|timesince}} ago</small>
+	 			<small class="smalls">Posted {{article.posted_time|timesince}} ago</small>
 				</div>
 				<div class="col-xs-4 text-right">
-	 			<small>Views: {{ article.views }}</small>
+	 			<small class="smalls">Views: {{ article.views }}</small>
 	 			</div>
 
 	 			<div class="lead content col-xs-12">

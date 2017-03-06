@@ -27,7 +27,7 @@ body {
 	padding-bottom: 20px;
 	padding-top: 20px;
 	background: #1abc9c;
-	transition: all 3s linear;
+	transition: all 1s ease-in;
 	/*
 	-webkit-animation: navbgchange 30s linear 0 infinite;
 	-moz-animation: navbgchange 30s linear 0 infinite;
