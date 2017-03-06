@@ -12,3 +12,10 @@ def blog_post_view(request, pk):
 	the_article.views += 1
 	the_article.save()
 	return render(request, 'blog/article.html', {"article": the_article})
+
+
+def super_user_view(request):
+	if request.user.is_authenticated:
+		return render(request, "blog/superuser.html")
+	else:
+		return render(request, "blog/superuser_login.html")
