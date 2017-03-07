@@ -4,6 +4,41 @@
 {% endblock title %}
 {% block navcolor %}#2f2f2f{% endblock navcolor %}
 {% block body %}
-	Hello
+	<div class="container">
+	<div class="row">
+	<div class="col-xs-2 col-xs-offset-5">
 	<a href="{% url 'blog_su_logout' %} " class="btn btn-danger">Logout</a>
+	</div>
+	<br><br>
+	<div class="col-xs-12 col-sm-8 col-sm-offset-2">
+	<form method="POST" action="">
+		{% csrf_token %}
+		<div class="form-group text-center">
+			<input type="text" class="form-control" id="title" name="title" placeholder="Enter the title of your article.">
+		</div>
+		<br>
+		<textarea></textarea>
+		<br>
+		<div class="col-xs-2 col-xs-offset-5">
+		<button type="submit" class="btn btn-large btn-success">POST</button>
+		</div>
+	</form>
+	</div>
+	</div>
+	</div>
 {% endblock body %}
+{% block script %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
+<script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
+<script>
+var simplemde = new SimpleMDE({
+	autosave: {
+		enabled: true,
+		uniqueId: "blogpost",
+		delay: 3000
+	},
+	hideIcons: ["fullscreen"],
+	placeholder: "Start writing your post, Sriram...",
+});
+</script>
+{% endblock script %}
