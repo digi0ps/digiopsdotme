@@ -3,10 +3,13 @@ from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponseRedirect
 from blog.models import article
 from blog.forms import ArticleForm
+import markdown2
 
 
 def blog_index_view(request):
 	all_articles = article.objects.all()
+	for x in all_articles:
+		x.content = markdown2.markdown(x.content, extras=["tables", "cuddled-lists"])
 	return render(request, 'blog/index.html', {"articles": all_articles})
 
 
@@ -14,6 +17,7 @@ def blog_post_view(request, pk):
 	the_article = get_object_or_404(article, pk=pk)
 	the_article.views += 1
 	the_article.save()
+	the_article.content = markdown2.markdown(the_article.content, extras=["tables", "cuddled-lists"])
 	return render(request, 'blog/article.html', {"article": the_article})
 
 # Superuser
