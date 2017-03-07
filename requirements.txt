@@ -1,0 +1,6 @@
+bleach==1.5.0
+Django==1.10.5
+django-bleach==0.3.0
+html5lib==0.9999999
+pytz==2016.10
+six==1.10.0
