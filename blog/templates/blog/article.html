@@ -30,6 +30,7 @@
 		color: black;
 	}
 	</style>
+	{% load bleach_tags %}
 	<div class="container">
 		<div class="row">
 			<div class="col-xs-12 col-sm-10 col-sm-offset-1 container-fluid">
@@ -47,7 +48,7 @@
 	 			</div>
 
 	 			<div class="lead content col-xs-12">
-	 			{{ article.content }}
+	 			{{ article.content|bleach }}
 	 			</div>
 	 		</div>
 	 		</div>

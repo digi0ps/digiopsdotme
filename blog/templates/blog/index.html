@@ -41,6 +41,7 @@
 		}
 	}
 </style>
+{% load bleach_tags %}
 <div class="container">
 	<div class="row">
 	{% for article in articles %}
@@ -61,7 +62,7 @@
 	 			</div>
 
 	 			<div class="lead content col-xs-12">
-	 			{{ article.content|truncatechars:300 }}
+	 			{{ article.content|bleach|truncatechars:300 }}
 	 			</div>
 	 		</div>
 	 		</div>

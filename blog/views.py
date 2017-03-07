@@ -1,7 +1,8 @@
 from django.shortcuts import render, get_object_or_404
-from blog.models import article
 from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponseRedirect
+from blog.models import article
+from blog.forms import ArticleForm
 
 
 def blog_index_view(request):
@@ -38,3 +39,13 @@ def super_user_view(request):
 def super_user_logout(request):
 	logout(request)
 	return HttpResponseRedirect("/blog/superuser")
+
+
+def post_article(request):
+	if request.POST and request.method == "POST":
+		f = ArticleForm(request.POST)
+		new_article = f.save()
+		print(new_article.id)
+		return HttpResponseRedirect("/blog/article/" + str(new_article.id))
+	else:
+		return HttpResponseRedirect("/blog/superuser")
