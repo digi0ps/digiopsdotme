@@ -1,5 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from blog.models import article
+from django.contrib.auth import authenticate, login, logout
+from django.http import HttpResponseRedirect
 
 
 def blog_index_view(request):
@@ -19,8 +21,18 @@ def super_user_view(request):
 		return render(request, "blog/superuser.html")
 	else:
 		if request.POST and request.method == "POST":
-			# Write code to verify superuser login
-			# After verifying return the superuser page
-			pass
+			uname = request.POST["username"]
+			pwd = request.POST["password"]
+			user = authenticate(username=uname, password=pwd)
+			if user is not None:
+				login(request, user)
+				return render(request, "blog/superuser.html")
+			else:
+				return render(request, "blog/superuser_login.html")
 		else:
 			return render(request, "blog/superuser_login.html")
+
+
+def super_user_logout(request):
+	logout(request)
+	return HttpResponseRedirect("/blog/superuser")
