@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'home',
-    'blog'
+    'blog',
+    'django_bleach'
 ]
 
 MIDDLEWARE = [
@@ -123,3 +124,9 @@ TIME_ZONE = 'Asia/Kolkata'
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+# Django Bleach settings
+# Which HTML tags are allowed
+BLEACH_ALLOWED_TAGS = ['p', 'h3', 'h4', 'em', 'strong', 'a', 'ul', 'ol', 'li', 'blockquote', 'code', 'table', 'thead', 'tbody', 'td', 'th', 'tr', 'pre']
+BLEACH_ALLOWED_ATTRIBUTES = ['href', 'title', 'name']
+BLEACH_STRIP_TAGS = True
