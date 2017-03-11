@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'f497z7=mx&yhos@704+=&3b*q0mz39@x5ahvb#vjx+=6#up!e8'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["localhost", "127.0.0.1", "digiopsdotme.pythonanywhere.com"]
 

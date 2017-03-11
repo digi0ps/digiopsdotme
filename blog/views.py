@@ -8,9 +8,9 @@ import markdown2
 
 def blog_index_view(request):
 	all_articles = article.objects.all()
-	for article in all_articles:
-		article.content = markdown2.markdown(article.content, extras=["tables", "cuddled-lists"])
-	return render(request, 'blog/index.html', {"articles": all_articles})
+	for x in all_articles:
+		x.content = markdown2.markdown(x.content, extras=["tables", "cuddled-lists"])
+	return render(request, 'blog/index.html', {"articles": all_articles[::-1]})
 
 
 def blog_post_view(request, pk):
@@ -18,7 +18,7 @@ def blog_post_view(request, pk):
 	the_article.views += 1
 	the_article.save()
 	the_article.content = markdown2.markdown(the_article.content, extras=["tables", "cuddled-lists"])
-	return render(request, 'blog/article.html', {"article": the_article})
+	return render(request, 'blog/article.html', {"article": the_article, "county": article.objects.count()})
 
 # Superuser
 
