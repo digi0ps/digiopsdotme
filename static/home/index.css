@@ -1,0 +1,25 @@
+body {
+	background: #eee;
+}
+.content {
+	margin-top: 10vh;
+}
+.contentbox {
+	background: white;
+	padding-top: 5vh;
+	padding-bottom: 5vh;
+	box-shadow: 10px 10px 30px grey;
+	border-radius: 2px;
+	margin-bottom: 50px;
+}
+.avatar {
+	border-radius: 50%;
+}
+h1 {
+	font-family: "Droid Sans", sans-serif;
+}
+.intro {
+	font-family: "Arima Madurai", cursive;
+	font-size: 18px;
+	padding: none;
+}
