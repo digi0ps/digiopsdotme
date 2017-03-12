@@ -3,7 +3,7 @@
 	Blog
 {% endblock title %}
 {% block desc %}
-	Sriram's blog :) - {{ county }} articles.
+	Sriram's blog. :)
 {% endblock desc %}
 {% block blogactive %}active{% endblock blogactive %}
 {% block navcolor %}#4CAF50{% endblock navcolor %}
@@ -59,6 +59,7 @@
 	
 </style>
 {% load bleach_tags %}
+{{ county }}
 <div class="container">
 	<div class="row">
 	{% for article in articles %}
