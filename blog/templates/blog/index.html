@@ -9,6 +9,7 @@
 {% block navcolor %}#4CAF50{% endblock navcolor %}
 {% block body %}
 <style>
+	@import url('https://fonts.googleapis.com/css?family=Lato|Montserrat');
 	.article {
 		background: #f7faff;
 		padding: 5px;
@@ -27,33 +28,29 @@
 		font-family: 'Montserrat', sans-serif;
 		margin-bottom: 5px;
 	}
-	.article small {
+	.content p{
+		font-family: 'Lato', sans-serif;
+		font-size: 16px;
+	}
+	.smalls {
 		color: #9E9E9E;
-		font-size: 15px;
+		font-size: 13px;
 	}
 	.article div{
 		color: #37474F;
 		margin-top: 5px;
 	}
-	.article a{
-		text-decoration: none;
-		color: black;
-	}
-	/*
 	.content a{
+		font-size: 15px;
 		color: #8BC34A;
 		text-decoration: none;
 	}
 	.content a:hover{
 		color: #558B2F;
 	}
-	*/
 	@media (min-width: 100px) and (max-width: 400px){
 		.content {
 			font-size: 20px;
-		}
-		.smalls {
-			font-size: 10px;
 		}
 	}
 	
@@ -63,7 +60,6 @@
 	<div class="row">
 	{% for article in articles %}
 		<div class="article col-xs-12 col-sm-10 col-sm-offset-1" id="art{{ article.id }}">
-			<a href="{% url 'article' article.id %}">
 			<div class="container-fluid">
 			<div class="row">
 
@@ -72,18 +68,19 @@
 	 			</div>
 
 	 			<div class="col-xs-8 text-left">
-	 			<small class="smalls">Posted {{article.posted_time|timesince}} ago</small>
+	 			<p class="smalls">Posted {{article.posted_time|timesince}} ago</p>
 				</div>
 				<div class="col-xs-4 text-right">
-	 			<small class="smalls">Views: {{ article.views }}</small>
+	 			<p class="smalls">Views: {{ article.views }}</p>
 	 			</div>
 
 	 			<div class="lead content col-xs-12">
-	 			{{ article.content|bleach|truncatechars:300 }}
+	 			{{ article.content|bleach|truncatechars:200 }}
+	 			<br>
+	 			<a href="{% url 'article' article.id %}" class="article-link">Continue Reading...</a>
 	 			</div>
 	 		</div>
 	 		</div>
- 			</a>
 		</div> 
 	{% endfor %}
 	</div>

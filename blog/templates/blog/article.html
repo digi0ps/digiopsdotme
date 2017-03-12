@@ -33,7 +33,7 @@
 	}
 	.article small {
 		color: #9E9E9E;
-		font-size: 10px;
+		font-size: 13px;
 	}
 	.article a{
 		color: #8BC34A;
@@ -45,9 +45,6 @@
 	@media (min-width: 400px){
 		.content p{
 			font-size: 20px;
-		}
-		.smalls {
-			font-size: 15px;
 		}
 	}
 
@@ -63,10 +60,10 @@
 	 			</div>
 
 	 			<div class="col-xs-8 text-left">
-	 			<small class="smalls">Posted {{article.posted_time|timesince}} ago</small>
+	 			<p class="smalls">Posted {{article.posted_time|timesince}} ago</p>
 				</div>
 				<div class="col-xs-4 text-right">
-	 			<small class="smalls">Views: {{ article.views }}</small>
+	 			<p class="smalls">Views: {{ article.views }}</p>
 	 			</div>
 
 	 			<div class="lead content col-xs-12">
