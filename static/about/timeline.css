@@ -298,14 +298,14 @@
             margin-top: 5px;
         }
         .timeline-links {
-            color: #FF9800;
+            color: #2196F3;
             font-family: "Consolas", monospace;
             font-size: 16px;
-            text-shadow: 2px 2px 5px;
         }
         .timeline-links:hover, .timeline-links:focus{
-            color: #EF6C00;
+            color: #1565C0;
             text-decoration: none;
+            text-shadow: 1px 1px 1px;
         }
         .comment {
             color: #4CAF50;
