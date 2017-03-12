@@ -127,6 +127,6 @@ STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
 # Django Bleach settings
 # Which HTML tags are allowed
-BLEACH_ALLOWED_TAGS = ['p', 'h3', 'h4', 'em', 'strong', 'a', 'ul', 'ol', 'li', 'blockquote', 'code', 'table', 'thead', 'tbody', 'td', 'th', 'tr', 'pre']
+BLEACH_ALLOWED_TAGS = ['p', 'h1', 'h2', 'br' 'h3', 'h4', 'em', 'strong', 'a', 'ul', 'ol', 'li', 'blockquote', 'code', 'table', 'thead', 'tbody', 'td', 'th', 'tr', 'pre']
 BLEACH_ALLOWED_ATTRIBUTES = ['href', 'title', 'name']
 BLEACH_STRIP_TAGS = True
