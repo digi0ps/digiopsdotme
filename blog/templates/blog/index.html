@@ -48,8 +48,8 @@
 	.content a:hover{
 		color: #558B2F;
 	}
-	@media (min-width: 100px) and (max-width: 400px){
-		.content {
+	@media (min-width: 400px){
+		.content p{
 			font-size: 20px;
 		}
 	}
@@ -75,7 +75,7 @@
 	 			</div>
 
 	 			<div class="lead content col-xs-12">
-	 			{{ article.content|bleach|truncatechars:200 }}
+	 			{{ article.content|bleach|truncatechars:300 }}
 	 			<br>
 	 			<a href="{% url 'article' article.id %}" class="article-link">Continue Reading...</a>
 	 			</div>
