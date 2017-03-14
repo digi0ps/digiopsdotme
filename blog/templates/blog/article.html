@@ -4,7 +4,7 @@
 	{{ article.title }} - digi0ps
 {% endblock title %}
 {% block navcolor %}#4CAF50{% endblock navcolor %}
-{% block desc %} {{article.content|bleach|truncatechars:300}} {% endblock desc %}
+{% block desc %} {{article.content|truncatechars:300}} {% endblock desc %}
 {% block body %}
 	<style>
 	@import url('https://fonts.googleapis.com/css?family=Lato|Montserrat');
