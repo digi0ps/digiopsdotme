@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'f497z7=mx&yhos@704+=&3b*q0mz39@x5ahvb#vjx+=6#up!e8'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["localhost", "127.0.0.1", "digiopsdotme.pythonanywhere.com"]
 
@@ -89,6 +89,7 @@ if 'RDS_DB_NAME' in os.environ:
             'PORT': os.environ['RDS_PORT'],
         }
     }
+    STATIC_ROOT = os.path.join(BASE_DIR, "..", "www", "static")
 else:
     DATABASES = {
         'default': {
@@ -100,6 +101,8 @@ else:
             'PORT': '',
         }
     }
+    DEBUG = True
+    STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
 
 # Password validation
@@ -138,7 +141,6 @@ TIME_ZONE = 'Asia/Kolkata'
 # Static files (CSS, JavaScript, Images)
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
 # Django Bleach settings
 # Which HTML tags are allowed
