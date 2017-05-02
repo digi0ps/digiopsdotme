@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block body %}
+<style>
+.boxy {
+	margin-top: 10vh;
+}
+</style>
+	<div class="container boxy">
+		<div class="row">
+			<div class="col-md-6 col-md-offset-3 col col-sm-8 col-sm-offset-2 col-xs-12 text-center contentbox">
+				<img src="{% static 'home/gears.gif' %}" alt="Gears" class="gears" width="160px" height="160px">
+				<br>
+				<h1>Ooops.</h1>
+				<p class="lead">Page under construction. </p>
+			</div>
+		</div>
+	</div>
+	<br><br>
+{% endblock body %}
